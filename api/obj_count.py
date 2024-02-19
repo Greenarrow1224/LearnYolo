@@ -10,6 +10,10 @@ def object_count_test_2():
     results = model.train(data='Objects365.yaml', epochs=1,datasetpath='')
     # 实际场景为视频流地址
     cap = cv2.VideoCapture("../other/ObjectCountDemo.mp4")
+    # 视频流地址
+    # videoCapture = cv2.VideoCapture(f'rtsp://{username}:{password}@{ip}:{port}/h264/ch1/main/av_stream')
+    # 本机摄像头,存在多个摄像头时，累加即可
+    # videoCapture = cv2.VideoCapture(0)
     assert cap.isOpened(), "Error reading video file"
     w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
 
